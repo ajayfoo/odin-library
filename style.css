@@ -24,7 +24,8 @@ body {
 
 h1:first-child {
     text-align: center;
-    margin: 0.4em;
+    margin: 0.8rem;
+    font-size: 2rem;
 }
 
 .library-area {
@@ -105,4 +106,29 @@ h1:first-child {
 .library-area>button:active {
     background-color: rgb(255 140 97);
     color: rgb(253, 211, 253);
+}
+
+form {
+    background-color: rgb(0 171 231);
+    color: rgb(36 32 56);
+    height: min-content;
+    padding: 1rem 0.8rem;
+    flex: 1;
+    display: none;
+}
+
+form>p {
+    display: flex;
+}
+
+form>p>* {
+    flex: 1;
+}
+
+main {
+    display: flex;
+}
+
+.library-area {
+    flex: 3;
 }
