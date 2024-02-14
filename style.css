@@ -27,17 +27,18 @@ h1:first-child {
     margin: 0.4em;
 }
 
-main {
+.library-area {
     padding: 1em;
 }
 
-main>article {
+.library-area>article {
     background-color: rgb(103 78 188);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, auto));
     padding: 2rem 1rem 1rem;
     gap: 20px;
     border-radius: 5px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 0.3);
 }
 
 .book {
@@ -49,6 +50,7 @@ main>article {
     padding: 1em;
     max-width: 350px;
     color: rgb(36 32 56);
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 0.3);
 }
 
 .book>* {
@@ -73,19 +75,20 @@ main>article {
     padding: 0.4em 0.8em;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 0.3);
 }
 
 .book>button:active {
     background-color: rgb(126, 180, 149);
 }
 
-main {
+.library-area {
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-main>button {
+.library-area>button {
     position: absolute;
     border: none;
     color: rgb(245 243 245);
@@ -96,9 +99,10 @@ main>button {
     font-size: 1.1rem;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 0.3);
 }
 
-main>button:active {
+.library-area>button:active {
     background-color: rgb(255 140 97);
     color: rgb(253, 211, 253);
 }
