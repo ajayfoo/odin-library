@@ -28,14 +28,14 @@ h1:first-child {
     font-size: 2rem;
 }
 
-.library-area {
+#library-area {
     padding: 1em;
 }
 
-.library-area>article {
+#library-area>article {
     background-color: rgb(103 78 188);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     padding: 2rem 1rem 1rem;
     gap: 20px;
     border-radius: 5px;
@@ -49,7 +49,7 @@ h1:first-child {
     justify-content: space-between;
     border-radius: 5px;
     padding: 1em;
-    max-width: 350px;
+    max-width: 250px;
     color: rgb(36 32 56);
     box-shadow: 2px 2px 5px rgb(0 0 0 / 0.3);
 }
@@ -83,7 +83,7 @@ h1:first-child {
     background-color: rgb(126, 180, 149);
 }
 
-.library-area {
+#library-area {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -165,7 +165,7 @@ h1:first-child {
 }
 
 #book-form>p>input[type='text'],
-#book-pages {
+#num-of-book-pages {
     font-size: inherit;
     font-family: inherit;
     border: none;
@@ -175,7 +175,7 @@ h1:first-child {
 }
 
 #book-form>p>input[type='text']:focus,
-#book-pages:focus {
+#num-of-book-pages:focus {
     box-shadow: 2px 2px 5px rgb(0 0 0 / 0.3);
     outline: none;
 }
@@ -184,7 +184,7 @@ main {
     display: flex;
 }
 
-.library-area {
+#library-area {
     flex: 3;
 }
 

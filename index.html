@@ -15,59 +15,37 @@
         <aside id="sidebar">
             <form id="book-form" action="">
                 <button aria-label="hide sidebar" id="hide-sidebar" type="button">
-                    <!-- <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <title>close</title>
-                        <path
-                            d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
-                    </svg> -->
                 </button>
                 <p>
                     <label for="book-title">Title</label>
-                    <input required placeholder="e.g. Harry Potter..." type="text" name="title" id="book-title">
+                    <input required placeholder="e.g. Harry Potter..." type="text" name="book-title" id="book-title">
                 </p>
                 <p>
                     <label for="book-author">Author</label>
-                    <input required placeholder="e.g. JK Rowling" type="text" name="author" id="book-author">
+                    <input required placeholder="e.g. JK Rowling" type="text" name="book-author" id="book-author">
                 </p>
                 <p>
-                    <label for="book-pages">Number Of Page</label>
-                    <input required placeholder="e.g. 670" type="number" name="pages" id="book-pages">
+                    <label for="num-of-book-pages">Number of pages</label>
+                    <input required placeholder="e.g. 670" type="number" name="num-of-book-pages"
+                        id="num-of-book-pages">
                 </p>
                 <fieldset>
                     <legend>Have you read the book?</legend>
                     <p>
-                        <input required type="radio" name="read" id="have-read">
+                        <input required type="radio" name="book-read" id="have-read">
                         <label for="have-read">Yes</label>
                     </p>
                     <p>
-                        <input required type="radio" checked name="read" id="have-not-read">
+                        <input required type="radio" checked name="book-read" id="have-not-read">
                         <label for="have-not-read">No</label>
                     </p>
                 </fieldset>
                 <button id="form-add-book" type="submit">Add</button>
             </form>
         </aside>
-        <div class="library-area">
+        <div id="library-area">
             <button id="add-book">Add Book</button>
-            <article>
-                <section class="book">
-                    <h2>Tuesday's With Morrie</h2>
-                    <p>by</p>
-                    <p>Mitch Albom</p>
-                    <button>Read</button>
-                </section>
-                <section class="book">
-                    <h2>Tuesday's With Morrie</h2>
-                    <p>by</p>
-                    <p>Mitch Albom</p>
-                    <button>Read</button>
-                </section>
-                <section class="book">
-                    <h2>Tuesday's With Morrie</h2>
-                    <p>by</p>
-                    <p>Mitch Albom</p>
-                    <button>Read</button>
-                </section>
+            <article id="books">
                 <section class="book">
                     <h2>Tuesday's With Morrie</h2>
                     <p>by</p>
