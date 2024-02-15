@@ -98,7 +98,7 @@ h1:first-child {
 #form-add-book {
     border: none;
     color: rgb(245 243 245);
-    background-color: rgb(190, 87, 87);
+    background-color: rgb(92, 85, 131);
     padding: 0.5em 1em;
     align-self: center;
     font-size: 1.1rem;
@@ -109,12 +109,12 @@ h1:first-child {
 
 #add-book:hover,
 #form-add-book:hover {
-    background-color: rgb(150, 67, 67);
+    background-color: rgb(67, 63, 94);
 }
 
 #add-book:active,
 #form-add-book:active {
-    background-color: rgb(255 140 97);
+    background-color: rgb(122, 113, 175);
     color: rgb(253, 211, 253);
 }
 
@@ -214,4 +214,8 @@ main {
 
 #hide-sidebar:active {
     background-color: rgb(255 140 97);
+}
+
+#form-add-book {
+    background-color: rgb(92, 85, 131);
 }
