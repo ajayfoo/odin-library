@@ -3,7 +3,7 @@ const addBookButton = document.getElementById('add-book');
 const formAddBookButton = document.getElementById('form-add-book');
 const hideSidebarButton = document.getElementById('hide-sidebar');
 const sidebar = document.getElementById('sidebar');
-const bookForm = document.forms[0];
+const bookForm = document.getElementById('book-form');
 const booksElement = document.getElementById('books');
 
 function Book(title, author, numOfPages, hasRead = false) {
@@ -13,11 +13,21 @@ function Book(title, author, numOfPages, hasRead = false) {
     this.hasRead = hasRead;
 }
 
+function getNewRemoveBookButton() {
+    const removeBookButton = document.createElement('button');
+    removeBookButton.type = 'button';
+    removeBookButton.addEventListener('click', (event) => {
+        library[event.target.parentNode.dataset.index] = null;
+        event.target.parentNode.remove();
+    });
+    return removeBookButton;
+}
+
 Book.prototype.getNewBookElement = function () {
-    const closeButton = document.createElement('button');
-    closeButton.type = 'button';
+    const removeBookButton = getNewRemoveBookButton();
     const book = document.createElement('section');
     book.classList.add('book');
+    book.setAttribute('data-index', library.length - 1);
     const title = document.createElement('h2');
     title.textContent = this.title;
     const by = document.createElement('p');
@@ -27,7 +37,7 @@ Book.prototype.getNewBookElement = function () {
     const readStatus = document.createElement('button');
     readStatus.textContent = this.hasRead ? 'Read' : 'Not Read';
     readStatus.type = 'button';
-    book.append(closeButton, title, by, author, readStatus);
+    book.append(removeBookButton, title, by, author, readStatus);
     return book;
 };
 
@@ -58,7 +68,6 @@ formAddBookButton.addEventListener('click', (event) => {
     if (!bookForm.checkValidity()) return;
     event.preventDefault();
     const newBook = getNewBook();
-    console.debug(newBook);
     bookForm.reset();
     library.push(newBook);
     booksElement.appendChild(newBook.getNewBookElement());

@@ -36,7 +36,7 @@ h1:first-child {
     background-color: rgb(103 78 188);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    padding: 2rem 1rem 1rem;
+    padding: 2.7rem 1rem 1rem;
     gap: 20px;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgb(0 0 0 / 0.3);
