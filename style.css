@@ -153,6 +153,10 @@ h1:first-child {
 }
 
 #book-form>fieldset:nth-last-child(2)>legend {
+    background-color: rgb(103 78 188);
+    color: rgb(247 236 225);
+    padding: 0.25em 0.5em;
+    border-radius: 5px;
     text-align: center;
 }
 
