@@ -52,11 +52,38 @@ h1:first-child {
     max-width: 250px;
     color: rgb(36 32 56);
     box-shadow: 2px 2px 5px rgb(0 0 0 / 0.3);
+    position: relative;
 }
 
 .book>* {
     text-align: center;
     margin-bottom: 0.5rem;
+}
+
+.book>button:first-child {
+    position: absolute;
+    top: -1em;
+    right: -1em;
+    background-color: rgb(190, 87, 87);
+    background-image: url(images/ic--round-close.svg);
+    background-position: center;
+    background-size: 80%;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 0.3);
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 1rem;
+    padding: 1em;
+}
+
+.book>button:first-child:hover {
+    background-color: rgb(150, 67, 67);
+
+}
+
+.book>button:first-child:active {
+    background-color: rgb(255 140 97);
+
 }
 
 .book>:last-child {
@@ -67,7 +94,7 @@ h1:first-child {
     font-size: clamp(1.1rem, 5vw, 1.2rem);
 }
 
-.book>button {
+.book>button:last-child {
     align-self: center;
     background-color: rgb(151 216 178);
     border: none;

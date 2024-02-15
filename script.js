@@ -14,6 +14,8 @@ function Book(title, author, numOfPages, hasRead = false) {
 }
 
 Book.prototype.getNewBookElement = function () {
+    const closeButton = document.createElement('button');
+    closeButton.type = 'button';
     const book = document.createElement('section');
     book.classList.add('book');
     const title = document.createElement('h2');
@@ -24,7 +26,8 @@ Book.prototype.getNewBookElement = function () {
     author.textContent = this.author;
     const readStatus = document.createElement('button');
     readStatus.textContent = this.hasRead ? 'Read' : 'Not Read';
-    book.append(title, by, author, readStatus);
+    readStatus.type = 'button';
+    book.append(closeButton, title, by, author, readStatus);
     return book;
 };
 
