@@ -132,11 +132,19 @@ h1:first-child {
     margin-top: 1em;
     flex: 1;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #book-form>p {
     display: flex;
     flex-direction: column;
+    margin-bottom: 0.5em;
+}
+
+#book-form>fieldset:nth-last-child(2) {
+    align-self: flex-start;
     margin-bottom: 0.5em;
 }
 
