@@ -34,11 +34,15 @@
                     <input required placeholder="e.g. 670" type="number" name="pages" id="book-pages">
                 </p>
                 <fieldset>
-                    <legend>Have Read?</legend>
-                    <input required type="radio" name="read" id="have-read">
-                    <label for="have-read">Yes</label>
-                    <input required type="radio" checked name="read" id="have-not-read">
-                    <label for="have-not-read">No</label>
+                    <legend>Have you read the book?</legend>
+                    <p>
+                        <input required type="radio" name="read" id="have-read">
+                        <label for="have-read">Yes</label>
+                    </p>
+                    <p>
+                        <input required type="radio" checked name="read" id="have-not-read">
+                        <label for="have-not-read">No</label>
+                    </p>
                 </fieldset>
                 <button id="form-add-book" type="submit">Add</button>
             </form>
