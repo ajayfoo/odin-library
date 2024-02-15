@@ -53,8 +53,11 @@ Book.prototype.getNewBookElement = function () {
     by.textContent = 'by';
     const author = document.createElement('p');
     author.textContent = this.author;
+    author.style.fontWeight = 'bold';
+    const pagesCount = document.createElement('p');
+    pagesCount.textContent = this.numOfPages + ' pages long';
     const readStatusButton = getNewReadStatusButton(this);
-    book.append(removeBookButton, title, by, author, readStatusButton);
+    book.append(removeBookButton, title, by, author, pagesCount, readStatusButton);
     return book;
 };
 
