@@ -96,7 +96,6 @@ h1:first-child {
 
 .book>button:last-child {
     align-self: center;
-    background-color: rgb(151 216 178);
     border: none;
     font-family: inherit;
     font-size: inherit;
@@ -245,4 +244,12 @@ main {
 
 #form-add-book {
     background-color: rgb(92, 85, 131);
+}
+
+.read {
+    background-color: rgb(151 216 178);
+}
+
+.not-read {
+    background-color: rgb(151, 206, 216);
 }

@@ -23,6 +23,25 @@ function getNewRemoveBookButton() {
     return removeBookButton;
 }
 
+function getNewReadStatusButton(book) {
+    const readStatusButton = document.createElement('button');
+    readStatusButton.classList.add(book.hasRead ? 'read' : 'not-read');
+    readStatusButton.textContent = book.hasRead ? 'Read' : 'Not Read';
+    readStatusButton.type = 'button';
+    readStatusButton.addEventListener('click', () => {
+        if (book.hasRead) {
+            readStatusButton.classList.add('not-read');
+            readStatusButton.classList.remove('read');
+        } else {
+            readStatusButton.classList.add('read');
+            readStatusButton.classList.remove('not-read');
+        }
+        readStatusButton.textContent = !book.hasRead ? 'Read' : 'Not Read';
+        book.hasRead = !book.hasRead;
+    });
+    return readStatusButton;
+}
+
 Book.prototype.getNewBookElement = function () {
     const removeBookButton = getNewRemoveBookButton();
     const book = document.createElement('section');
@@ -34,10 +53,8 @@ Book.prototype.getNewBookElement = function () {
     by.textContent = 'by';
     const author = document.createElement('p');
     author.textContent = this.author;
-    const readStatus = document.createElement('button');
-    readStatus.textContent = this.hasRead ? 'Read' : 'Not Read';
-    readStatus.type = 'button';
-    book.append(removeBookButton, title, by, author, readStatus);
+    const readStatusButton = getNewReadStatusButton(this);
+    book.append(removeBookButton, title, by, author, readStatusButton);
     return book;
 };
 
