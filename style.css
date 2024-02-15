@@ -103,25 +103,33 @@ h1:first-child {
     box-shadow: 2px 2px 5px rgb(0 0 0 / 0.3);
 }
 
+.library-area>button:hover {
+    background-color: rgb(150, 67, 67);
+}
+
 .library-area>button:active {
     background-color: rgb(255 140 97);
     color: rgb(253, 211, 253);
 }
 
-form {
+#book-form {
+    border-bottom-right-radius: 5px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 0.3);
     background-color: rgb(0 171 231);
     color: rgb(36 32 56);
     height: min-content;
     padding: 1rem 0.8rem;
+    margin-top: 1em;
     flex: 1;
     display: none;
+    position: relative;
 }
 
-form>p {
+#book-form>p {
     display: flex;
 }
 
-form>p>* {
+#book-form>p>* {
     flex: 1;
 }
 
@@ -131,4 +139,32 @@ main {
 
 .library-area {
     flex: 3;
+}
+
+#hide-form {
+    position: absolute;
+    top: -1em;
+    right: -1em;
+    background-color: rgb(190, 87, 87);
+    background-image: url(images/mdi--hide.svg);
+    background-position: center;
+    background-size: 65%;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 1rem;
+    width: 2rem;
+    height: 2rem;
+    padding: 1rem;
+    margin: 0;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 0.3);
+    cursor: pointer;
+    z-index: 1;
+}
+
+#hide-form:hover {
+    background-color: rgb(150, 67, 67);
+}
+
+#hide-form:active {
+    background-color: rgb(255 140 97);
 }
