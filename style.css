@@ -89,27 +89,37 @@ h1:first-child {
     flex-direction: column;
 }
 
-.library-area>button {
+#add-book {
     position: absolute;
+    top: 0em;
+}
+
+#add-book,
+#form-add-book {
     border: none;
     color: rgb(245 243 245);
     background-color: rgb(190, 87, 87);
     padding: 0.5em 1em;
     align-self: center;
-    top: 0em;
     font-size: 1.1rem;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 2px 2px 5px rgb(0 0 0 / 0.3);
 }
 
-.library-area>button:hover {
+#add-book:hover,
+#form-add-book:hover {
     background-color: rgb(150, 67, 67);
 }
 
-.library-area>button:active {
+#add-book:active,
+#form-add-book:active {
     background-color: rgb(255 140 97);
     color: rgb(253, 211, 253);
+}
+
+#sidebar {
+    display: none;
 }
 
 #book-form {
@@ -121,16 +131,33 @@ h1:first-child {
     padding: 1rem 0.8rem;
     margin-top: 1em;
     flex: 1;
-    display: none;
     position: relative;
 }
 
 #book-form>p {
     display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
 }
 
 #book-form>p>* {
     flex: 1;
+}
+
+#book-form>p>input[type='text'],
+#book-pages {
+    font-size: inherit;
+    font-family: inherit;
+    border: none;
+    border-radius: 5px;
+    padding: 0.3em;
+    margin-top: 0.3em;
+}
+
+#book-form>p>input[type='text']:focus,
+#book-pages:focus {
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 0.3);
+    outline: none;
 }
 
 main {
@@ -141,7 +168,7 @@ main {
     flex: 3;
 }
 
-#hide-form {
+#hide-sidebar {
     position: absolute;
     top: -1em;
     right: -1em;
@@ -161,10 +188,10 @@ main {
     z-index: 1;
 }
 
-#hide-form:hover {
+#hide-sidebar:hover {
     background-color: rgb(150, 67, 67);
 }
 
-#hide-form:active {
+#hide-sidebar:active {
     background-color: rgb(255 140 97);
 }

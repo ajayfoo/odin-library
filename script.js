@@ -1,7 +1,7 @@
 const library = [new Book('Harry Potter And The Order Of Phoenix', 'JK Rowling', 670),];
 const addBookButton = document.getElementById('add-book');
-const hideFormButton = document.getElementById('hide-form');
-const bookForm = document.getElementById('book-form');
+const hideSidebarButton = document.getElementById('hide-sidebar');
+const sidebar = document.getElementById('sidebar');
 
 function Book(title, author, numOfPages, hasRead = false) {
     this.title = title;
@@ -11,9 +11,9 @@ function Book(title, author, numOfPages, hasRead = false) {
 }
 
 addBookButton.addEventListener('click', () => {
-    bookForm.style.display = 'block';
+    sidebar.style.display = 'block';
 });
 
-hideFormButton.addEventListener('click', () => {
-    bookForm.style.display = 'none';
+hideSidebarButton.addEventListener('click', () => {
+    sidebar.style.display = 'none';
 })
