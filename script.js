@@ -85,20 +85,24 @@ const BookView = (() => {
     return { getNewRemoveBookButton, getNewReadStatusButton, getNewBookElement };
 })();
 
-function getNewBook() {
-    return new Book(
-        document.getElementById('book-title').value,
-        document.getElementById('book-author').value,
-        document.getElementById('num-of-book-pages').value,
-        document.getElementById('have-read').checked,
-    );
-}
+const Helper = (() => {
+    const getNewBookWithFormFieldValues = () => {
+        return new Book(
+            document.getElementById('book-title').value,
+            document.getElementById('book-author').value,
+            document.getElementById('num-of-book-pages').value,
+            document.getElementById('have-read').checked,
+        );
+    };
 
-function populateBooksElement() {
-    for (const book of library) {
-        booksElement.appendChild(BookView.getNewBookElement(book));
-    }
-}
+    const populateBooksElement = () => {
+        for (const book of library) {
+            booksElement.appendChild(BookView.getNewBookElement(book));
+        }
+    };
+
+    return { getNewBookWithFormFieldValues, populateBooksElement };
+})();
 
 addBookButton.addEventListener('click', () => {
     sidebar.style.display = 'block';
@@ -111,10 +115,10 @@ hideSidebarButton.addEventListener('click', () => {
 formAddBookButton.addEventListener('click', (event) => {
     if (!bookForm.checkValidity()) return;
     event.preventDefault();
-    const newBook = getNewBook();
+    const newBook = Helper.getNewBookWithFormFieldValues();
     bookForm.reset();
     library.push(newBook);
     booksElement.appendChild(BookView.getNewBookElement(newBook));
 });
 
-populateBooksElement();
+Helper.populateBooksElement();
