@@ -1,10 +1,30 @@
 class Book {
+    #title;
+    #author;
+    #numOfPages;
+    #hasRead;
     constructor(title, author, numOfPages, hasRead = false) {
-        this.title = title;
-        this.author = author;
-        this.numOfPages = Number(numOfPages);
+        this.#title = title;
+        this.#author = author;
+        this.#numOfPages = Number(numOfPages);
         this.hasRead = hasRead;
     }
+    set title(value) {
+        this.#title = value;
+    }
+    get title() { return this.#title; }
+    set author(value) {
+        this.#author = value;
+    }
+    get author() { return this.#author; }
+    set numOfPages(value) {
+        this.#numOfPages = value;
+    }
+    get numOfPages() { return this.#numOfPages; }
+    set hasRead(value) {
+        this.#hasRead = value;
+    }
+    get hasRead() { return this.#hasRead; }
 }
 
 const library = [new Book('Harry Potter And The Order Of Phoenix', 'JK Rowling', 670),];
