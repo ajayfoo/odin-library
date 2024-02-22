@@ -1,3 +1,12 @@
+class Book {
+    constructor(title, author, numOfPages, hasRead = false) {
+        this.title = title;
+        this.author = author;
+        this.numOfPages = Number(numOfPages);
+        this.hasRead = hasRead;
+    }
+}
+
 const library = [new Book('Harry Potter And The Order Of Phoenix', 'JK Rowling', 670),];
 const addBookButton = document.getElementById('add-book');
 const formAddBookButton = document.getElementById('form-add-book');
@@ -5,13 +14,6 @@ const hideSidebarButton = document.getElementById('hide-sidebar');
 const sidebar = document.getElementById('sidebar');
 const bookForm = document.getElementById('book-form');
 const booksElement = document.getElementById('books');
-
-function Book(title, author, numOfPages, hasRead = false) {
-    this.title = title;
-    this.author = author;
-    this.numOfPages = Number(numOfPages);
-    this.hasRead = hasRead;
-}
 
 function getNewRemoveBookButton() {
     const removeBookButton = document.createElement('button');
