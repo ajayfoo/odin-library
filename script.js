@@ -7,7 +7,7 @@ class Book {
         this.#title = title;
         this.#author = author;
         this.#numOfPages = Number(numOfPages);
-        this.hasRead = hasRead;
+        this.#hasRead = hasRead;
     }
     set title(value) {
         this.#title = value;
@@ -63,30 +63,27 @@ const BookView = (() => {
         });
         return readStatusButton;
     }
+    const getNewBookElement = (book) => {
+        const removeBookButton = BookView.getNewRemoveBookButton();
+        const bookElement = document.createElement('section');
+        bookElement.classList.add('book');
+        bookElement.setAttribute('data-index', library.length - 1);
+        const title = document.createElement('h2');
+        title.textContent = book.title;
+        const by = document.createElement('p');
+        by.textContent = 'by';
+        const author = document.createElement('p');
+        author.textContent = book.author;
+        author.style.fontWeight = 'bold';
+        const pagesCount = document.createElement('p');
+        pagesCount.textContent = book.numOfPages + ' pages long';
+        const readStatusButton = BookView.getNewReadStatusButton(book);
+        bookElement.append(removeBookButton, title, by, author, pagesCount, readStatusButton);
+        return bookElement;
+    };
 
-    return { getNewRemoveBookButton, getNewReadStatusButton };
+    return { getNewRemoveBookButton, getNewReadStatusButton, getNewBookElement };
 })();
-
-
-
-Book.prototype.getNewBookElement = function () {
-    const removeBookButton = BookView.getNewRemoveBookButton();
-    const book = document.createElement('section');
-    book.classList.add('book');
-    book.setAttribute('data-index', library.length - 1);
-    const title = document.createElement('h2');
-    title.textContent = this.title;
-    const by = document.createElement('p');
-    by.textContent = 'by';
-    const author = document.createElement('p');
-    author.textContent = this.author;
-    author.style.fontWeight = 'bold';
-    const pagesCount = document.createElement('p');
-    pagesCount.textContent = this.numOfPages + ' pages long';
-    const readStatusButton = BookView.getNewReadStatusButton(this);
-    book.append(removeBookButton, title, by, author, pagesCount, readStatusButton);
-    return book;
-};
 
 function getNewBook() {
     return new Book(
@@ -99,7 +96,7 @@ function getNewBook() {
 
 function populateBooksElement() {
     for (const book of library) {
-        booksElement.appendChild(book.getNewBookElement());
+        booksElement.appendChild(BookView.getNewBookElement(book));
     }
 }
 
@@ -117,7 +114,7 @@ formAddBookButton.addEventListener('click', (event) => {
     const newBook = getNewBook();
     bookForm.reset();
     library.push(newBook);
-    booksElement.appendChild(newBook.getNewBookElement());
+    booksElement.appendChild(BookView.getNewBookElement(newBook));
 });
 
 populateBooksElement();
